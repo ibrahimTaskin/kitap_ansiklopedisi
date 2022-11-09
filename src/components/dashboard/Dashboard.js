@@ -1,9 +1,8 @@
-import React, { Children } from 'react'
-import { Navbar } from '../layout/Navbar'
+import React from 'react'
 import { BookList } from '../pages/BookList/BookList'
 import { Notification } from './Notification'
 
-export const Dashboard = ({children}) => {
+export const Dashboard = () => {
   return (
    <div className='dashboard container'>
         <div className='row'>
