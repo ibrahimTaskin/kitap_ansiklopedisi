@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SignInLinks from "./SignInLinks";
-import SignOutLinks from "./SignOutLinks";
+import { SignInLinks } from "./SignInLinks";
+import { SignUpLinks } from "./SignUpLinks";
 
 export const Navbar = () => {
   return (
@@ -19,7 +19,7 @@ export const Navbar = () => {
           </li>
         </ul>
           <SignInLinks />
-          <SignOutLinks />
+          <SignUpLinks />
       </div>
     </nav>
   );

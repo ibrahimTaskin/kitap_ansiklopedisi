@@ -16,7 +16,7 @@ export const SignIn = () => {
   return (
     <div className='container'>
       <form onSubmit={handleSubmit} action="" className='white'>
-        <h5 className='grey-text text-darken-3'>Sıgn In</h5>
+        <h5 className='grey-text text-darken-3'>Login</h5>
         <div className="input-field">
           <label htmlFor="email">Email</label>
           <input type="email" id='email' onChange={handleChange} />

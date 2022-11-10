@@ -29,7 +29,7 @@ export const SignUp = () => {
           <input type="email" id="email" onChange={handleChange} />
         </div>
         <div className="input-field">
-          <label htmlFor="password">password</label>
+          <label htmlFor="password">Password</label>
           <input type="password" id="password" onChange={handleChange} />
         </div>
         <div className="input-field">
