@@ -5,7 +5,7 @@ import { SignUp } from './components/auth/SignUp';
 import  Dashboard  from './components/dashboard/Dashboard';
 import { Navbar } from './components/layout/Navbar';
 import { BookDetail } from './components/pages/BookDetail/BookDetail';
-import { CreateBook } from './components/pages/CreateBook';
+import CreateBook  from './components/pages/CreateBook';
 
 function App() {
   return (

@@ -8,6 +8,10 @@ const initState = {
     ]
 };
 
-export const bookReducer = (state = initState,action) => {
-    return state;
-}
+export const bookReducer = (state = initState, action) => { // action => {type, book}
+  switch (action.type) {
+    case "CREATE_BOOK":
+      console.log("Kitap oluşturuldu.",action.book);
+  }
+  return state;
+};
