@@ -1,16 +1,30 @@
-import React from 'react'
-import { BookList } from '../pages/BookList/BookList'
-import { Notification } from './Notification'
+import React from "react";
+import { connect } from "react-redux";
+import { BookList } from "../pages/BookList/BookList";
+import { Notification } from "./Notification";
 
-export const Dashboard = () => {
+
+const Dashboard = (props) => {
+  const {books} = props;
   return (
-   <div className='dashboard container'>
-        <div className='row'>
-            <div className="col s12 m6 l4"><BookList /></div>
-            <div className="col s12 m6 l8">
-                <Notification/>
-            </div>
+    <div className="dashboard container">
+      <div className="row">
+        <div className="col s12 m6 l4">
+          <BookList books={books} />
         </div>
-   </div>
-  )
+        <div className="col s12 m6 l8">
+          <Notification />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => { // state => store => reducers => bookReducers => books
+  return {
+    books: state.book.books
+  }
 }
+
+export default connect(mapStateToProps)(Dashboard);
+

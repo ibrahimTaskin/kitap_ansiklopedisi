@@ -2,13 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { BookDetail } from "../BookDetail/BookDetail";
 
-export const BookSummary = () => {
+export const BookSummary = ({book}) => {
+  const {id,title,description,datetime} = book;
   return (
     <div className="card z-depth-0 book-summary">
       <div className="card-content f-green-text text-darken-3">
-        <span className="card-title">Book Title</span>
+        <span className="card-title">{title}</span>
         <p>İbrahim Taşkın</p>
-        <p className="green-text">08.11.2022</p>
+        <p className="green-text">{datetime}</p>
         {/* <NavLink to='/book' className='btn btn-floating teal lighten-1'>Go Detail</NavLink> */}
       </div>
     </div>
