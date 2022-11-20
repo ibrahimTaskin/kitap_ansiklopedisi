@@ -11,7 +11,6 @@ export const BookSummary = ({book}) => {
         <span className="card-title">{title}</span>
         <p>{author}</p>
         <p className="green-text">{datetime}</p>
-        {/* <NavLink to='/book' className='btn btn-floating teal lighten-1'>Go Detail</NavLink> */}
       </div>
     </div>
   );
