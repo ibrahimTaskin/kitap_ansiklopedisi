@@ -1,7 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
-export const SignUpLinks = () => {
+
+const SignOutLinks = () => {
   return (
     <ul className='right'>
         <li><NavLink to='/signup'>Sign Up</NavLink></li>
@@ -9,3 +11,11 @@ export const SignUpLinks = () => {
     </ul>
   )
 }
+
+const mapStateToProps = (state) => {
+  return({
+    auth:state.firebase
+  })
+}
+
+export default connect(mapStateToProps)(SignOutLinks);

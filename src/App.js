@@ -1,9 +1,9 @@
 import { Route,  Switch } from "react-router-dom";
 import "./App.css";
-import { SignIn } from "./components/auth/SignIn";
-import { SignUp } from "./components/auth/SignUp";
+import SignIn from "./components/auth/SignIn";
+import SignUp from "./components/auth/SignUp";
 import Dashboard from "./components/dashboard/Dashboard";
-import { Navbar } from "./components/layout/Navbar";
+import Navbar from "./components/layout/Navbar";
 import BookDetail from "./components/pages/BookDetail/BookDetail";
 import CreateBook from "./components/pages/CreateBook";
 

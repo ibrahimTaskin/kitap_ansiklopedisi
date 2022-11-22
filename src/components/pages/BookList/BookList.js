@@ -7,8 +7,8 @@ export const BookList = ({ books }) => {
     <div className="book-list section">
       {books?.length > 0 ? (
         books?.map((book) => (
-          <Link to={`/book/${book.id}`}>
-            <BookSummary key={book.id} book={book} />
+          <Link to={`/book/${book.id}`} key={book.id} >
+            <BookSummary book={book} />
           </Link>
         ))
       ) : (

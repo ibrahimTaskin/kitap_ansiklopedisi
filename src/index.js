@@ -11,24 +11,25 @@ import thunk from "redux-thunk";
 
 import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
 import { reduxFirestore, getFirestore } from "redux-firestore";
-import firebase from './config/firebaseconfig';
+import firebase from "./config/firebaseconfig";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
 
 const store = createStore(
   rootReducer,
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
     reduxFirestore(firebase),
-    reactReduxFirebase(firebase)
+    reactReduxFirebase(firebase, { attachAuthIsReady: true })
   )
 );
 
-root.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </BrowserRouter>
-);
+store.firebaseAuthIsReady.then(() => {
+  root.render(
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
+  );
+});

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const SignUp = () => {
+const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,3 +41,5 @@ export const SignUp = () => {
     </div>
   );
 };
+
+export default SignUp;

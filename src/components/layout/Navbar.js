@@ -1,9 +1,12 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { SignInLinks } from "./SignInLinks";
-import { SignUpLinks } from "./SignUpLinks";
+import SignInLinks from "./SignInLinks";
+import SignOutLinks from "./SignOutLinks";
 
-export const Navbar = () => {
+const Navbar = (props) => {
+  const {auth} = props;
+  const links = auth?.uid ?  <SignInLinks /> :  <SignOutLinks />;
   return (
     <nav>
       <div class="nav-wrapper teal accent-2">
@@ -18,9 +21,16 @@ export const Navbar = () => {
             <Link to="Books">Book List</Link>
           </li>
         </ul>
-          <SignInLinks />
-          <SignUpLinks />
+          {links}
       </div>
     </nav>
   );
 };
+
+const mapStateToProps = (state) => {
+  return({
+    auth:state.firebase.auth
+  })
+}
+
+export default connect(mapStateToProps)(Navbar);

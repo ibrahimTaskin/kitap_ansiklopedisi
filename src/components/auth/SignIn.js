@@ -1,17 +1,29 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux';
+import { signIn } from '../../store/actions/authActions';
 
-export const SignIn = () => {
-  const [email,setEmail] = useState('');
-  const [password,setPassword] = useState('');
+const SignIn = (props) => {
+  const [identity, setIdentity] = useState({
+    email:"",
+    password:""
+  });
 
   const handleChange = (e) => {
-    if(e.target.id === 'email') setEmail(e.target.value);
-    if(e.target.id === 'password') setPassword(e.target.value);
+    let _identity = { ...identity };
+
+    if(e.target.id === 'email') _identity["email"] = e.target.value;
+    if(e.target.id === 'password') _identity["password"] = e.target.value;
+
+    setIdentity(_identity);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    props.signIn(identity)
   }
+
+  const {authError} = props;
 
   return (
     <div className='container'>
@@ -27,10 +39,26 @@ export const SignIn = () => {
         </div>
         <div className="input-field">
           <button className='btn cyan lighten-1 z-depth-0'>Login</button>
-        </div>
-        <p>{email}</p>
-        <p>{password}</p>
+          <div className="red-text center">
+            {authError ? <p>{authError}</p> : null}
+          </div>
+        </div>       
       </form>
     </div>
   )
 }
+
+const mapDispatchToProps = (dispatch) => {
+  
+  return{
+    signIn:(identity) => dispatch(signIn(identity))
+  }
+}
+
+const mapStateToProps = (state) => {
+  return{
+    authError:state.auth.authError
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(SignIn);
