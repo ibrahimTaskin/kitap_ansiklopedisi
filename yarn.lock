@@ -8162,7 +8162,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@^15.6.1", "prop-types@^15.6.2", "prop-types@^15.8.1":
+"prop-types@^15.6.1", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -8367,7 +8367,7 @@
   "resolved" "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
   "version" "3.0.4"
 
-"react-redux-firebase@^2.1.8":
+"react-redux-firebase@2.1.8":
   "integrity" "sha512-SClXFOGfDtg3F2AdMp0SXzj9N+C5nkfQBY5f6wuGit7xTkgGgDXsoL162yRx+CuC2wlQfLUCNQMTS0TGhKXFSw=="
   "resolved" "https://registry.npmjs.org/react-redux-firebase/-/react-redux-firebase-2.1.8.tgz"
   "version" "2.1.8"
@@ -8376,7 +8376,7 @@
     "lodash" "^4.17.10"
     "prop-types" "^15.6.1"
 
-"react-redux@^5.1.1":
+"react-redux@5.1.1":
   "integrity" "sha512-LE7Ned+cv5qe7tMV5BPYkGQ5Lpg8gzgItK07c67yHvJ8t0iaD9kPFPAli/mYkiyJYrs2pJgExR2ZgsGqlrOApg=="
   "resolved" "https://registry.npmjs.org/react-redux/-/react-redux-5.1.1.tgz"
   "version" "5.1.1"
@@ -8394,7 +8394,7 @@
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.11.0.tgz"
   "version" "0.11.0"
 
-"react-router-dom@^4.3.1":
+"react-router-dom@4.3.1":
   "integrity" "sha512-c/MlywfxDdCp7EnB7YfPMOfMD3tOtIjrQlj/CKfNMBxdmpJP8xcz5P/UAFn3JbnQCNUxsHyVVqllF9LhgVyFCA=="
   "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-4.3.1.tgz"
   "version" "4.3.1"
@@ -8419,7 +8419,7 @@
     "prop-types" "^15.6.1"
     "warning" "^4.0.1"
 
-"react-scripts@^5.0.1":
+"react-scripts@5.0.1":
   "integrity" "sha512-8VAmEm/ZAwQzJ+GOMLbBsTdDKOpuZh7RPs0UymvBR2vRk4iZWCskjbFnxqjrzoIvlNNRZ3QJFx6/qDSi6zSnaQ=="
   "resolved" "https://registry.npmjs.org/react-scripts/-/react-scripts-5.0.1.tgz"
   "version" "5.0.1"
@@ -8474,14 +8474,12 @@
   optionalDependencies:
     "fsevents" "^2.3.2"
 
-"react@^16.0.0":
-  "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
-  "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
-  "version" "16.14.0"
+"react@^18.2.0":
+  "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
+  "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
+  "version" "18.2.0"
   dependencies:
     "loose-envify" "^1.1.0"
-    "object-assign" "^4.1.1"
-    "prop-types" "^15.6.2"
 
 "read-cache@^1.0.0":
   "integrity" "sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA=="
@@ -8534,7 +8532,7 @@
     "indent-string" "^4.0.0"
     "strip-indent" "^3.0.0"
 
-"redux-firestore@^0.5.7":
+"redux-firestore@0.5.7":
   "integrity" "sha512-s5eKr0BV18zBKkcuoBKQOt8QdfgrHlTz2C+/RtFKG2dOUpNtJuIsBb4aG4cCKfRklml6uX0TzT/noX+O20vv6A=="
   "resolved" "https://registry.npmjs.org/redux-firestore/-/redux-firestore-0.5.7.tgz"
   "version" "0.5.7"
