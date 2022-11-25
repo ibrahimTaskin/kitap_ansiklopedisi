@@ -12,7 +12,7 @@ export const BookList = ({ books }) => {
           </Link>
         ))
       ) : (
-        <h5>No Data</h5>
+        <h5>Yükleniyor</h5>
       )}
     </div>
   );

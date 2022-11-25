@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { createBook } from "../../store/actions/bookActions";
 
 const CreateBook = (props) => {
@@ -16,7 +17,6 @@ const CreateBook = (props) => {
     let copyBook = { ...book };
 
     if (e.target.id === "title") copyBook["title"] = e.target.value;
-    if (e.target.id === "name") copyBook["name"] = e.target.value;
     if (e.target.id === "author") copyBook["author"] = e.target.value;
     if (e.target.id === "mycomment") copyBook["mycomment"] = e.target.value;
     if (e.target.id === "isbn") copyBook["isbn"] = e.target.value;
@@ -25,7 +25,6 @@ const CreateBook = (props) => {
     setBook(copyBook);
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -33,58 +32,70 @@ const CreateBook = (props) => {
   };
 
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit} action="" className="white">
-        <h5 className="grey-text text-darken-3">Create Book</h5>
-        <div className="input-field">
-          <label htmlFor="title">Title</label>
-          <input type="text" id="title" onChange={(e) => handleChange(e)} />
+    <>
+      {props.auth.uid ? (
+        <div className="container">
+          <form onSubmit={handleSubmit} action="" className="white">
+            <h5 className="grey-text text-darken-3">Create Book</h5>
+            <div className="input-field">
+              <label htmlFor="title">Title</label>
+              <input type="text" id="title" onChange={(e) => handleChange(e)} />
+            </div>           
+            <div className="input-field">
+              <label htmlFor="author">Author Name</label>
+              <input
+                type="text"
+                id="author"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <div className="input-field">
+              <label htmlFor="mycomment">My Comment</label>
+              <textarea
+                style={{ height: "6rem" }}
+                className="materialize-textarea"
+                id="mycomment"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="input-field">
+              <label htmlFor="isbn">ISBN</label>
+              <textarea
+                className="materialize-textarea"
+                id="isbn"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="input-field">
+              <label htmlFor="datetime">Datetime</label>
+              <textarea
+                className="materialize-textarea"
+                id="datetime"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="input-field">
+              <button className="btn green lighten-1 z-depth-0">Save</button>
+            </div>
+          </form>
         </div>
-        <div className="input-field">
-          <label htmlFor="name">Book Name</label>
-          <input type="text" id="name" onChange={(e) => handleChange(e)} />
-        </div>
-        <div className="input-field">
-          <label htmlFor="author">Author Name</label>
-          <input type="text" id="author" onChange={(e) => handleChange(e)} />
-        </div>
-        <div className="input-field">
-          <label htmlFor="mycomment">My Comment</label>
-          <textarea
-            style={{height:'6rem'}}
-            className="materialize-textarea"
-            id="mycomment"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="input-field">
-          <label htmlFor="isbn">ISBN</label>
-          <textarea
-            className="materialize-textarea"
-            id="isbn"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="input-field">
-          <label htmlFor="datetime">Datetime</label>
-          <textarea
-            className="materialize-textarea"
-            id="datetime"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="input-field">
-          <button className="btn green lighten-1 z-depth-0">Save</button>
-        </div>
-      </form>
-    </div>
+      ) : (
+        <Redirect to={'/signin'} />
+      )}
+    </>
   );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createBook: (book) => dispatch(createBook(book))
+    createBook: (book) => dispatch(createBook(book)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(CreateBook);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateBook);

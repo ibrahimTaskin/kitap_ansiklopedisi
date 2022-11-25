@@ -9,7 +9,7 @@ import {signOut} from '../../store/actions/authActions'
     <ul className='right'>
         <li><NavLink to='/createBook' >Yeni Proje</NavLink></li>
         <li><a onClick={props.signOut}>Log Out</a></li>
-        <li><NavLink to='/' className='btn btn-floating teal lighten-1'>AAA</NavLink></li>
+        <li><NavLink to='/' className='btn btn-floating teal lighten-1'>IT</NavLink></li>
     </ul>
   )
 }
