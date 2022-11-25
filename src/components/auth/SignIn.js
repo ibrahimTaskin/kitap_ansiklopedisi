@@ -22,6 +22,8 @@ const SignIn = (props) => {
     e.preventDefault();
     
     props.signIn(identity)
+
+    props.history.push('/');
   }
 
   const {authError,auth} = props;

@@ -22,13 +22,15 @@ const CreateBook = (props) => {
     if (e.target.id === "isbn") copyBook["isbn"] = e.target.value;
     if (e.target.id === "datetime") copyBook["datetime"] = e.target.value;
 
-    setBook(copyBook);
+    setBook(copyBook);   
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     props.createBook(book);
+
+    props.history.push('/');
   };
 
   return (
