@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
@@ -20,7 +21,7 @@ const BookDetail = (props) => {
             <div className="card-action teal accent-2 white-text">
               <div>{book?.author}</div>
               <div>{book?.isbn}</div>
-              <div>{book?.datetime}</div>
+              <div>{moment(book?.datetime.toDate().toString()).calendar()}</div>
             </div>
           </div>
         </div>

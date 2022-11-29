@@ -1,15 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export const BookSummary = ({book}) => {
- 
-  const {author,datetime,title} = book;
+export const BookSummary = ({ book }) => {
+  const { title, id, url } = book;
   return (
-    <div className="card z-depth-0 book-summary">
-      <div className="card-content f-green-text text-darken-3">
-        <span className="card-title">{title}</span>
-        <p>{author}</p>
-        <p className="green-text">{datetime}</p>
-      </div>
-    </div>
+    <>
+      <Link to={`/book/${id}`} key={book.id}>
+        <div style={{ borderRadius: "15px" }} class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img style={{ borderRadius: "15px" }} src={url} />
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">
+              {title}
+            </span>
+          </div>
+        </div>
+      </Link>
+    </>
   );
 };
