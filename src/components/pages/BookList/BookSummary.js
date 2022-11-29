@@ -1,6 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { BookDetail } from "../BookDetail/BookDetail";
 
 export const BookSummary = ({book}) => {
  
