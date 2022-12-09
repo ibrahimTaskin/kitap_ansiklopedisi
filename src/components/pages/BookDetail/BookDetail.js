@@ -39,29 +39,7 @@ const BookDetail = (props) => {
                     {book?.title}
                   </h1>
                   <p class="pt-10 mb-3 font-light text-gray-500 dark:text-gray-400 first-line:uppercase first-line:tracking-widest first-letter:text-4xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left">
-                    {book?.mycomment}{" "}
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Veritatis, omnis adipisci ipsum eveniet, obcaecati illo
-                      labore corrupti, impedit dicta molestias quasi unde
-                      repellat tempora minus iste nostrum consequuntur quod
-                      tenetur. Saepe, animi pariatur illum magni a inventore
-                      debitis nulla obcaecati ducimus sequi labore accusamus
-                      dolorum error iure ea cumque ut corrupti quaerat? Iure
-                      odit deleniti magni rerum deserunt at veniam. Et ipsum qui
-                      hic aut vitae autem recusandae repudiandae quos inventore
-                      porro eos doloribus facere, sunt excepturi laudantium
-                      deserunt quas ipsam voluptatum voluptates, ullam nulla.
-                      Iste consequatur repellat blanditiis libero! Beatae,
-                      voluptatum quidem. Fugit iste similique doloribus ab rem
-                      distinctio placeat, impedit ad enim maxime esse, magni,
-                      cumque soluta nisi illum ex fuga blanditiis laudantium
-                      omnis saepe corporis eius earum? Nemo odit ad accusamus ea
-                      autem ab mollitia illo fugit sint, assumenda consequatur
-                      maxime eligendi dignissimos, reprehenderit perferendis?
-                      Optio, porro. Ex delectus modi vero possimus tempore,
-                      nihil excepturi mollitia consequatur.
-                    </p>
+                    {book?.mycomment}{" "}                    
                   </p>
                 </div>
                 <div className="basis-1/2 p-5 ">
