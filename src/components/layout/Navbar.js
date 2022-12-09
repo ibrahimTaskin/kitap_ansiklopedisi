@@ -1,54 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import SignInLinks from "./SignInLinks";
 
 const Navbar = (props) => {
-  const { auth } = props;
-  const links = auth?.uid ? <SignInLinks /> : null;
+  const theme = (e) => {
+    document.documentElement.classList.toggle("dark");
+  };
+
+  const ToggleButton = () => {
+    return (
+      <div className="ml-3">
+        <button
+          title="Toggle Theme"
+          onClick={theme}
+          class="
+                w-12 
+                h-6 
+                rounded-full 
+                p-1 
+                bg-gray-400 
+                dark:bg-gray-600 
+                relative 
+                transition-colors 
+                duration-500 
+                ease-in
+                focus:outline-none 
+                focus:ring-2 
+                focus:ring-blue-700 
+                dark:focus:ring-yellow-600 
+                focus:border-transparent
+                "
+        >
+          <div id="toggle" class="rounded-full w-4 h-4 bg-blue-600 dark:focus:ring-yellow-600  relative ml-0 dark:ml-6 pointer-events-none transition-all duration-300 ease-out"></div>
+        </button>
+      </div>
+    );
+  };
+
   return (
-    // <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
-    //   <div class="flex justify-between items-center ">
-    //     <span class="text-2xl font-[Poppins] cursor-pointer">
-    //       <img class="h-10 inline" src={"/img/KitapLogo.png"} />
-    //     </span>
-
-    //     <span class="text-3xl cursor-pointer mx-2 md:hidden block">
-    //       <ion-icon name="menu" onclick="Menu(this)">a</ion-icon>
-    //     </span>
-    //   </div>
-
-    //   <ul class="md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
-    //     <li class="mx-4 my-6 md:my-0">
-    //       <Link to="/" class="text-xl hover:text-cyan-500 duration-500">
-    //         HOME
-    //       </Link>
-    //     </li>
-    //     <li class="mx-4 my-6 md:my-0">
-    //       <Link
-    //         to="About"
-    //         href="#"
-    //         class="text-xl hover:text-cyan-500 duration-500"
-    //       >
-    //         ABOUT
-    //       </Link>
-    //     </li>
-    //     <h2 class=""></h2>
-    //   </ul>
-    //   <ul>
-    //     {links}
-    //   </ul>
-    // </nav>
-    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+    <nav class="bg-gray-100 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
       <div class="container flex flex-wrap items-center justify-between mx-auto">
-        <a href="#" class="flex items-center">
+        <Link to="/" class="flex items-center">
           <img
             src={"/img/KitapLogo.png"}
             s
             class="h-6 mr-3 sm:h-9"
             alt="kitap_logo"
           />
-        </a>
+        </Link>
         <div class="flex items-center md:order-2">
           <a
             href="https://ibrahimtaskin.cf/"
@@ -61,6 +60,7 @@ const Navbar = (props) => {
               alt="ibrahim_taskin"
             />
           </a>
+          <ToggleButton />
         </div>
       </div>
     </nav>

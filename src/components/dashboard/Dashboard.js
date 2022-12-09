@@ -8,7 +8,7 @@ const Dashboard = (props) => {
   const { books } = props;
 
   return (
-    <div className="min-h-screen flex items-center bg-green-100">
+    <div className="min-h-screen flex items-center bg-green-100 dark:bg-slate-600">
       <div className="flex-1 max-w-6xl mx-auto p-10">
         <BookList books={books} />
       </div>

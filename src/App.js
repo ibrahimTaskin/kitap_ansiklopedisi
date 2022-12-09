@@ -6,6 +6,10 @@ import Navbar from "./components/layout/Navbar";
 import { About } from "./components/pages/About";
 import BookDetail from "./components/pages/BookDetail/BookDetail";
 import CreateBook from "./components/pages/CreateBook";
+import ReactGA from 'react-ga';
+
+const TRACKING_ID = process.env.GOOGLE_TRACKING_ID;
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
   return (
