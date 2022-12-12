@@ -1,8 +1,9 @@
+import moment from "moment";
 import React from "react";
 import { Link } from "react-router-dom";
 
 export const BookSummary = ({ book }) => {
-  const { title, id, url , mycomment } = book;
+  const { title, id, url , mycomment ,datetime } = book;
   return (
     <>
       <div>
@@ -22,6 +23,9 @@ export const BookSummary = ({ book }) => {
             </h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
               {mycomment.substr(0,100)}...
+            </p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              {moment(datetime.toDate().toString()).calendar()}...
             </p>
           </div>
         </Link>
