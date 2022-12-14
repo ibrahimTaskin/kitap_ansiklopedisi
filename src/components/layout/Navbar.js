@@ -38,7 +38,7 @@ const Navbar = (props) => {
   };
 
   return (
-    <nav class="bg-gray-100 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+    <nav class="bg-gray-100 border-gray-200 px-2 sm:px-4 py-2.5  dark:bg-gray-800">
       <div class="container flex flex-wrap items-center justify-between mx-auto">
         <Link to="/" class="flex items-center">
           <img
