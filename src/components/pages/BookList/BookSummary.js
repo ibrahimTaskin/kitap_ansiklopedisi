@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export const BookSummary = ({ book }) => {
   const { title, id, url , mycomment ,datetime } = book;
+  console.log('datetime:', datetime);
   return (
     <>
       <div>
@@ -25,7 +26,7 @@ export const BookSummary = ({ book }) => {
               {mycomment.substr(0,100)}...
             </p>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              {moment(datetime.toDate().toString()).calendar()}...
+              {moment(datetime?.toDate ? datetime.toDate() : datetime).calendar()}
             </p>
           </div>
         </Link>

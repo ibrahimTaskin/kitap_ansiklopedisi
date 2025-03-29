@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
@@ -26,6 +26,6 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect(() => [
-    { collection: "books" }, // or `todos/${props.todoId}`
+    { collection: "books" },
   ])
 )(Dashboard);

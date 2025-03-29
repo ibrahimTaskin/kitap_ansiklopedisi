@@ -59,7 +59,7 @@ const BookDetail = (props) => {
                     Bitirme Tarihi
                   </h6>
                   <p class="font-light  text-gray-500 dark:text-gray-400">
-                    {moment(book?.datetime.toDate().toString()).calendar()}
+                    {moment(book?.datetime?.toDate ? book.datetime.toDate() : new Date(book.datetime)).calendar()}
                   </p>
                 </div>
               </div>

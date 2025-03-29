@@ -46,7 +46,8 @@ const Navbar = () => (
       <div className="flex items-center md:order-2">
         <a
           href="https://ibrahimtaskin.cf/"
-          target={"_blank"}
+          target="_blank"
+          rel="noreferrer"
           className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
         >
           <img
